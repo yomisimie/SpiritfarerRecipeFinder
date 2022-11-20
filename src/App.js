@@ -72,7 +72,11 @@ function App() {
             <Grid justifyContent="center" item xs={4}>
               <Item key={index} className="dish">
                 <img
-                  src={process.env.PUBLIC_URL + dish?.image}
+                  src={
+                    (process.env.NODE_ENV === "development"
+                      ? process.env.PUBLIC_URL
+                      : "") + dish?.image
+                  }
                   alt={dish.name}
                 />
                 <div>
@@ -81,7 +85,11 @@ function App() {
                     <img
                       width="24px"
                       height="24px"
-                      src={process.env.PUBLIC_URL + "assets/img/Glim.png"}
+                      src={
+                        (process.env.NODE_ENV === "development"
+                          ? process.env.PUBLIC_URL
+                          : "") + "assets/img/Glim.png"
+                      }
                       alt="Glim"
                     />
                     <span>{dish.price}</span>
