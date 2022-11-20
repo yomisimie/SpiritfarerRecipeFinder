@@ -1,0 +1,42 @@
+.App {
+  text-align: center;
+}
+.dishes {
+  .dish {
+    .price {
+      span {
+        line-height: 24px;
+      }
+    }
+    .ingredients {
+      display: inline;
+      span {
+        color: #ad0505;
+        padding: 0 5px;
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          right: 0%;
+          top: 50%;
+          height: 50%;
+          width: 1px;
+          background: #333;
+          transform: translateY(-25%);
+        }
+        &.found {
+          color: green;
+        }
+        &:first-of-type {
+          padding-left: 0;
+        }
+        &:last-of-type {
+          padding-right: 0px;
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
